@@ -257,6 +257,22 @@ void QPixelTool::keyPressEvent(QKeyEvent *e)
             setZoom(m_zoom - 1);
         }
         break;
+    case Qt::Key_Up:
+        if (e->modifiers() & Qt::ControlModifier)
+            setFixedSize(width(), height() - 10);
+        break;
+    case Qt::Key_Down:
+        if (e->modifiers() & Qt::ControlModifier)
+            setFixedSize(width(), height() + 10);
+        break;
+    case Qt::Key_Left:
+        if (e->modifiers() & Qt::ControlModifier)
+            setFixedSize(width() - 10, height());
+        break;
+    case Qt::Key_Right:
+        if (e->modifiers() & Qt::ControlModifier)
+            setFixedSize(width() + 10, height());
+        break;
     case Qt::Key_PageUp:
         setGridSize(m_gridSize + 1);
         break;
